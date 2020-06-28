@@ -1,8 +1,13 @@
 import actionType from "store/actionTypes";
 
 const initialState = {
-  isModalOpened: false,
-  modal: null,
+  // isModalOpened: false,
+  isModalOpened: true,
+  // modal: null,
+  modal: {
+    title: "Настройки",
+    component: "MODAL_SETTINGS",
+  },
 };
 
 export const modal = (state = initialState, action) => {

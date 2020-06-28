@@ -57,7 +57,8 @@
       "no-process-exit": "off",
       "object-shorthand": "off",
       "class-methods-use-this": "off",
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "react/jsx-fragments": "off"
     },
     "settings": {
       "import/resolver": {
