@@ -1,7 +1,7 @@
 {
   "name": "arma-bc",
   "description": "Ballistic calculator for Arma 3 game items",
-  "version": "0.1.13",
+  "version": "0.1.0",
   "author": {
     "name": "Sergey Gorshkov",
     "email": "gorshkov88@gmail.com",
@@ -75,8 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "yarn version --patch"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
