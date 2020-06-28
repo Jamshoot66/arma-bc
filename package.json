@@ -1,7 +1,7 @@
 {
   "name": "arma-bc",
   "description": "Ballistic calculator for Arma 3 game items",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Sergey Gorshkov",
     "email": "gorshkov88@gmail.com",
@@ -41,7 +41,9 @@
       "plugin:prettier/recommended",
       "prettier/react"
     ],
-    "plugins": ["prettier"],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "prettier/prettier": "error",
       "no-unused-vars": "error",
@@ -77,7 +79,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint", "prettier --write"],
+    "*.{js,jsx}": [
+      "eslint",
+      "prettier --write"
+    ],
     "css,scss,md}": "prettier --write"
   }
 }
