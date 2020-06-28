@@ -75,8 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "yarn version --patch"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -84,6 +83,6 @@
       "eslint",
       "prettier --write"
     ],
-    "css,scss,md}": "prettier --write"
+    "*.{css,scss,md}": "prettier --write"
   }
 }
