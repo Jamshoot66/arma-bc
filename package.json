@@ -75,7 +75,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "yarn version --patch"
     }
   },
   "lint-staged": {
