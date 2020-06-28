@@ -1,7 +1,7 @@
 {
   "name": "arma-bc",
   "description": "Ballistic calculator for Arma 3 game items",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": {
     "name": "Sergey Gorshkov",
     "email": "gorshkov88@gmail.com",
