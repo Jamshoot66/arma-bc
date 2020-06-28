@@ -5,9 +5,9 @@ import Settings from "components/Settings";
 import ModalContainer from "./ModalContainer";
 
 class ModalManager extends React.PureComponent {
-  getComponentType = (component) => {
-    switch (component) {
-      case types.modal.MODAL_SETTINGS:
+  getComponentType = (componentType) => {
+    switch (componentType) {
+      case types.modal.MODAL_SETTINGS.type:
         return <Settings />;
       default:
         throw new Error("Unknown component");

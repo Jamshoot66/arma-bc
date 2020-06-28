@@ -1,7 +1,8 @@
 import actionType from "store/actionTypes";
 
 const initialState = {
-  isModalOpened: true,
+  isModalOpened: false,
+  modal: null,
 };
 
 export const modal = (state = initialState, action) => {
