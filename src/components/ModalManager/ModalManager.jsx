@@ -33,11 +33,19 @@ class ModalManager extends React.PureComponent {
 }
 
 ModalManager.propTypes = {
-  isModalOpened: PropTypes.bool.isRequired,
-  modal: PropTypes.shape({
-    title: PropTypes.string,
-    component: PropTypes.string,
-  }).isRequired,
+  isModalOpened: PropTypes.bool,
+  modal: PropTypes.oneOfType([
+    PropTypes.shape({
+      title: PropTypes.string,
+      component: PropTypes.string,
+    }),
+    PropTypes.oneOf([null]),
+  ]),
+};
+
+ModalManager.defaultProps = {
+  isModalOpened: false,
+  modal: null,
 };
 
 export default ModalManager;
