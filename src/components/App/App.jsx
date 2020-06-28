@@ -8,7 +8,7 @@ import setupStore from "store";
 
 const Comp = styled.div`
   background: red;
-  padding: 20px;
+  padding: 21px;
 `;
 
 function App() {
