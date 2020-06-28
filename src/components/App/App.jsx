@@ -6,11 +6,13 @@ import theme from "themes";
 import setupStore from "store";
 
 import Header from "components/Header";
+import ModalManager from "components/ModalManager";
 
 function App() {
   return (
     <Provider store={setupStore()}>
       <ThemeProvider theme={theme}>
+        <ModalManager />
         <MDBContainer>
           <Header />
         </MDBContainer>
