@@ -10,6 +10,7 @@ export const Wrapper = styled(MDBRow)`
 export const Caption = styled.h2`
   font-size: 1.6rem;
   margin-right: auto;
+  margin-bottom: 0;
 `;
 
 export const Bar = styled(MDBNavbar)`
