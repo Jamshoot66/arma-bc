@@ -6,6 +6,7 @@ import theme from "themes";
 import setupStore from "store";
 
 import Header from "components/Header";
+import Main from "components/Main";
 import ModalManager from "components/ModalManager";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <ModalManager />
         <MDBContainer>
           <Header />
+          <Main />
         </MDBContainer>
       </ThemeProvider>
     </Provider>
