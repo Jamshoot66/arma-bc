@@ -1,16 +1,17 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import actions from "store/actions";
 import types from "types";
 import { Caption, Wrapper, Settings, Bar } from "./Header-ui";
 
 function Header() {
   const dispatch = useDispatch();
-
+  const weapon = useSelector((store) => store.settings.weapon, shallowEqual);
+  const header = weapon || "Выбирете вооружение в настройках";
   return (
     <Wrapper>
       <Bar>
-        <Caption>Header</Caption>
+        <Caption>{header}</Caption>
         <Settings
           onClick={() =>
             dispatch(
