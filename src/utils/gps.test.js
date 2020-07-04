@@ -71,13 +71,25 @@ describe("GPS utilities. Test 'parseGPS' function", () => {
 describe("GPS utilities. Test 'calcGPS' function", () => {
   test("gps calc with good result 1", () => {
     const source = [123.5, 456.5];
-    const result = "123456";
+    const result = { gps: "123456" };
     expect(calcGPS(...source)).toEqual(result);
   });
 
   test("gps calc with good result 2", () => {
     const source = [999, 111];
-    const result = "999111";
+    const result = { gps: "999111" };
+    expect(calcGPS(...source)).toEqual(result);
+  });
+
+  test("gps calc with good result 3", () => {
+    const source = [12, 345];
+    const result = { gps: "012345" };
+    expect(calcGPS(...source)).toEqual(result);
+  });
+
+  test("gps calc with good result 4", () => {
+    const source = [123, 1.5];
+    const result = { gps: "123001" };
     expect(calcGPS(...source)).toEqual(result);
   });
 
