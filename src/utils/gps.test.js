@@ -1,6 +1,6 @@
-import { parseGPS } from "./gps";
+import { parseGPS, calcGPS } from "./gps";
 
-describe("gps utilities test", () => {
+describe("GPS utilities. Test 'parseGPS' function", () => {
   test("6 digits gps parser with good result", () => {
     const source = "123456";
     const result = {
@@ -65,5 +65,25 @@ describe("gps utilities test", () => {
     const source = [1, 2, 3, 4, 5, 6];
     const result = null;
     expect(parseGPS(source)).toEqual(result);
+  });
+});
+
+describe("GPS utilities. Test 'calcGPS' function", () => {
+  test("gps calc with good result 1", () => {
+    const source = [123.5, 456.5];
+    const result = "123456";
+    expect(calcGPS(...source)).toEqual(result);
+  });
+
+  test("gps calc with good result 2", () => {
+    const source = [999, 111];
+    const result = "999111";
+    expect(calcGPS(...source)).toEqual(result);
+  });
+
+  test("gps calc with bad input", () => {
+    const source = [123.4];
+    const result = null;
+    expect(calcGPS(...source)).toEqual(result);
   });
 });
