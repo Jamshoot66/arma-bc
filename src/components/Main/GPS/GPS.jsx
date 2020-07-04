@@ -1,16 +1,13 @@
 import React from "react";
-import { useDispatch, shallowEqual, useSelector } from "react-redux";
+import PropTypes from "prop-types";
+import { useDispatch, shallowEqual, useSelector, connect } from "react-redux";
 import actions from "store/actions";
 import { ShooterForm, TargetForm } from "./GPS.ui";
 
-function GPS() {
+function GPS(props) {
   const dispatch = useDispatch();
-  const shooter = {
-    gps: useSelector((store) => store.gps.shooter.gps, shallowEqual),
-    height: useSelector((store) => store.gps.shooter.height, shallowEqual),
-    x: useSelector((store) => store.gps.shooter.x, shallowEqual),
-    y: useSelector((store) => store.gps.shooter.y, shallowEqual),
-  };
+
+  const { shooter } = props;
 
   const target = {
     gps: useSelector((store) => store.gps.target.gps, shallowEqual),
@@ -50,4 +47,26 @@ function GPS() {
   );
 }
 
-export default GPS;
+GPS.propTypes = {
+  shooter: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+    gps: PropTypes.number,
+    height: PropTypes.number,
+  }),
+};
+
+GPS.defaultProps = {
+  shooter: {},
+};
+
+const getFormData = (who) => (store) => ({
+  gps: store.gps[who].gps,
+  height: store.gps[who].height,
+  x: store.gps[who].x,
+  y: store.gps[who].y,
+});
+
+export default connect((store) => ({
+  shooter: getFormData("shooter")(store),
+}))(GPS);
