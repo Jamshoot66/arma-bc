@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import actions from "store/actions";
-import { WeaponSelect, GridSize, CenterGridSwitch } from "./Settings-ui";
+import { WeaponSelect, GridSize, CenterGridSwitch } from "./Settings.ui";
 
 function Settings() {
   const settings = useSelector((store) => store.settings, shallowEqual);

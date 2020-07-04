@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { MDBRow, MDBCol, MDBTabPane, MDBTabContent, MDBNav } from "mdbreact";
 
-import { TabButton } from "./Main-ui";
+import { TabButton } from "./Main.ui";
+import GPS from "./GPS";
 
 class Main extends Component {
   tabs = [
-    { caption: "GPS", content: "gps" },
+    { caption: "GPS", content: <GPS /> },
     { caption: "Прямой", content: "Прямой" },
     { caption: "Позиции", content: "Позиции" },
     { caption: "Таблица", content: "Таблица" },

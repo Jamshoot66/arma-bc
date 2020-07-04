@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import actions from "store/actions";
 import types from "types";
-import { Caption, Wrapper, Settings, Bar } from "./Header-ui";
+import { Caption, Wrapper, Settings, Bar } from "./Header.ui";
 
 function Header() {
   const dispatch = useDispatch();
