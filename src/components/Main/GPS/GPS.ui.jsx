@@ -1,6 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components/macro";
 import { MDBInput, MDBRow, MDBCol } from "mdbreact";
 
 export function GPSForm(props) {
@@ -68,10 +67,12 @@ GPSForm.defaultProps = {
   onCoordsChange: () => {},
 };
 
-export const ShooterForm = styled(GPSForm).attrs(() => ({
-  caption: "Позиция стрелка",
-}))``;
+export const ShooterForm = memo((props) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <GPSForm caption="Позиция стрелка" {...props} />
+));
 
-export const TargetForm = styled(GPSForm).attrs(() => ({
-  caption: "Позиция цели",
-}))``;
+export const TargetForm = memo((props) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <GPSForm caption="Позиция цели" {...props} />
+));

@@ -1,1 +1,1 @@
-export { default } from "./GPS";
+export { default } from "./GPS.connect";
