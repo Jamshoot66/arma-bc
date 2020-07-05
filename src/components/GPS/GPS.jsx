@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import GPSSummary from "components/GPSSummary";
+import MortarElevations from "components/MortarElevations";
 import { ShooterForm, TargetForm } from "./GPS.ui";
 
 function GPS(props) {
@@ -38,6 +39,7 @@ function GPS(props) {
       />
 
       <GPSSummary />
+      <MortarElevations />
     </React.Fragment>
   );
 }
