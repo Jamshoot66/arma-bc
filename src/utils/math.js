@@ -32,7 +32,7 @@ export const calcDistance = (start, end) =>
   Math.sqrt((start.x - end.x) ** 2 + (start.y - end.y) ** 2);
 
 /**
- * @description calculate angle between two vectors
+ * @description calculate angle between {0,1} and {start, end} vectors
  * @param {number} start.x
  * @param {number} start.y
  * @param {number} end.x
@@ -42,4 +42,4 @@ export const calcDistance = (start, end) =>
  * @usage calcAngle({x:1, y:1}, {x:2, y:2}) -> ~0.785
  */
 export const calcAngle = (start, end) =>
-  Math.acos((start.y - end.y) / calcDistance(start, end));
+  Math.acos((end.y - start.y) / calcDistance(start, end));
