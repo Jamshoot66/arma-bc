@@ -42,3 +42,10 @@ export const setXY = ({ shooter, target }) => (dispatch, getState) => {
     payload: { shooter: parsedShooter, target: parsedTarget },
   });
 };
+
+export const setHeight = ({ shooter, target }) => (dispatch) => {
+  dispatch({
+    type: actionType.SET_COORDS,
+    payload: { shooter, target },
+  });
+};

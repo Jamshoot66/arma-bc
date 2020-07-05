@@ -1,1 +1,1 @@
-export { default } from "./GPS.connect";
+export { default } from "./GPS.connect.jsx";

@@ -3,7 +3,16 @@ import PropTypes from "prop-types";
 import { MDBInput, MDBRow, MDBCol } from "mdbreact";
 
 export function GPSForm(props) {
-  const { gps, onGPSChange, height, caption, x, y, onCoordsChange } = props;
+  const {
+    gps,
+    onGPSChange,
+    height,
+    onHeightChange,
+    caption,
+    x,
+    y,
+    onCoordsChange,
+  } = props;
   return (
     <React.Fragment>
       <MDBRow>
@@ -25,6 +34,7 @@ export function GPSForm(props) {
             label="Высота, м"
             value={height}
             containerClass="mb-0 mt-2"
+            onChange={(e) => onHeightChange(e.target.value)}
           />
         </MDBCol>
       </MDBRow>
@@ -58,6 +68,7 @@ GPSForm.propTypes = {
   onCoordsChange: PropTypes.func,
   gps: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
+  onHeightChange: PropTypes.func,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
 };
@@ -65,6 +76,7 @@ GPSForm.propTypes = {
 GPSForm.defaultProps = {
   onGPSChange: () => {},
   onCoordsChange: () => {},
+  onHeightChange: () => {},
 };
 
 export const ShooterForm = memo((props) => (

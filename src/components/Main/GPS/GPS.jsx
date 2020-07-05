@@ -8,8 +8,10 @@ function GPS(props) {
     target,
     setShooterGPS,
     setShooterXY,
+    setShooterHeight,
     setTargetGPS,
     setTargetXY,
+    setTargetHeight,
   } = props;
 
   return (
@@ -21,6 +23,7 @@ function GPS(props) {
         y={shooter.y}
         onGPSChange={setShooterGPS}
         onCoordsChange={setShooterXY}
+        onHeightChange={setShooterHeight}
       />
 
       <TargetForm
@@ -30,6 +33,7 @@ function GPS(props) {
         y={target.y}
         onGPSChange={setTargetGPS}
         onCoordsChange={setTargetXY}
+        onHeightChange={setTargetHeight}
       />
     </div>
   );
@@ -50,8 +54,10 @@ GPS.propTypes = {
   }),
   setShooterGPS: PropTypes.func,
   setShooterXY: PropTypes.func,
+  setShooterHeight: PropTypes.func,
   setTargetGPS: PropTypes.func,
   setTargetXY: PropTypes.func,
+  setTargetHeight: PropTypes.func,
 };
 
 GPS.defaultProps = {
@@ -59,8 +65,10 @@ GPS.defaultProps = {
   target: {},
   setShooterGPS: () => {},
   setShooterXY: () => {},
+  setShooterHeight: () => {},
   setTargetGPS: () => {},
   setTargetXY: () => {},
+  setTargetHeight: () => {},
 };
 
 export default GPS;
