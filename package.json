@@ -60,7 +60,8 @@
       "class-methods-use-this": "off",
       "import/prefer-default-export": "off",
       "react/jsx-fragments": "off",
-      "import/extensions": "off"
+      "import/extensions": "off",
+      "no-restricted-globals": "off"
     },
     "settings": {
       "import/resolver": {
