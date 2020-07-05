@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+import { calcDistance, calcAngle, radToMil } from "utils";
 
 const gpsData = (store) => store.gps;
 const settings = (store) => store.settings;
@@ -27,9 +28,7 @@ export const getDistance = createSelector(
       y: data.target.y,
     };
 
-    const distance =
-      Math.sqrt((shooter.x - target.x) ** 2 + (shooter.y - target.y) ** 2) *
-      gridSize;
+    const distance = calcDistance(shooter, target) * gridSize;
     return !isNaN(distance) ? Math.round(distance) : "";
   },
 );
@@ -39,4 +38,24 @@ export const getHeight = createSelector(gpsData, ({ shooter, target }) => {
   const targetHeight = target?.height;
   const height = targetHeight - shooterHeight;
   return !isNaN(height) ? Math.round(height) : "";
+});
+
+export const getDirection = createSelector(gpsData, (data) => {
+  const shooter = {
+    x: data.shooter.x,
+    y: data.shooter.y,
+  };
+
+  const target = {
+    x: data.target.x,
+    y: data.target.y,
+  };
+
+  const directionRad = calcAngle(shooter, target);
+  const directionMil =
+    target.x - shooter.x < 0
+      ? 6400 - radToMil(directionRad)
+      : radToMil(directionRad);
+
+  return !isNaN(directionMil) ? Math.round(directionMil) : "";
 });
