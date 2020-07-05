@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { MDBRow, MDBCol, MDBTabPane, MDBTabContent, MDBNav } from "mdbreact";
 
 import { TabButton } from "./Main.ui";
-import GPS from "./GPS";
+import GPS from "../GPS";
 
 class Main extends Component {
   tabs = [

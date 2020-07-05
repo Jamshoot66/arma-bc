@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import GPSSummary from "components/GPSSummary";
 import { ShooterForm, TargetForm } from "./GPS.ui";
 
 function GPS(props) {
@@ -15,7 +16,7 @@ function GPS(props) {
   } = props;
 
   return (
-    <div>
+    <React.Fragment>
       <ShooterForm
         gps={shooter.gps}
         height={shooter.height}
@@ -35,7 +36,9 @@ function GPS(props) {
         onCoordsChange={setTargetXY}
         onHeightChange={setTargetHeight}
       />
-    </div>
+
+      <GPSSummary />
+    </React.Fragment>
   );
 }
 
