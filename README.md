@@ -1,5 +1,8 @@
 # arma-bc
+
 Ballistic calculator for Arma 3 game items
+
+PWA ready app at [https://arma-bc.web.app](https://arma-bc.web.app).
 
 ---
 
