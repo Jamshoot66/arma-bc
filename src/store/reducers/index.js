@@ -1,4 +1,7 @@
 import { combineReducers } from "redux";
-import { test } from "./test";
+import { modal } from "./modal";
+import { settings } from "./settings";
+import { gps } from "./gps";
+import { rangeTable } from "./rangeTable";
 
-export default combineReducers({ test });
+export default combineReducers({ modal, settings, gps, rangeTable });

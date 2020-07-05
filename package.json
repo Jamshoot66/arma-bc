@@ -12,13 +12,17 @@
     "node": "~12.16.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bootstrap-css-only": "^4.4.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "mdbreact": "^4.27.0",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -26,6 +30,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
     "styled-components": "^5.1.1",
     "styled-is": "^1.3.0"
   },
@@ -53,7 +58,10 @@
       "no-process-exit": "off",
       "object-shorthand": "off",
       "class-methods-use-this": "off",
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "react/jsx-fragments": "off",
+      "import/extensions": "off",
+      "no-restricted-globals": "off"
     },
     "settings": {
       "import/resolver": {

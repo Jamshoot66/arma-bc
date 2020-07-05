@@ -1,21 +1,23 @@
 import React from "react";
-import styled from "styled-components/macro";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-
+import { MDBContainer } from "mdbreact";
 import theme from "themes";
 import setupStore from "store";
 
-const Comp = styled.div`
-  background: red;
-  padding: 21px;
-`;
+import Header from "components/Header";
+import Main from "components/Main";
+import ModalManager from "components/ModalManager";
 
 function App() {
   return (
     <Provider store={setupStore()}>
       <ThemeProvider theme={theme}>
-        <Comp> test </Comp>
+        <ModalManager />
+        <MDBContainer>
+          <Header />
+          <Main />
+        </MDBContainer>
       </ThemeProvider>
     </Provider>
   );
