@@ -46,10 +46,15 @@ describe("Object utilities. Test 'isEmpty' function", () => {
     expect(consoleOutput.length).toEqual(1);
   });
 
-  test("on null should print error on console", () => {
+  test("on null should return true", () => {
     const source = null;
-    const result = null;
+    const result = true;
     expect(isEmpty(source)).toEqual(result);
-    expect(consoleOutput.length).toEqual(1);
+  });
+
+  test("on undefined should return true", () => {
+    const source = undefined;
+    const result = true;
+    expect(isEmpty(source)).toEqual(result);
   });
 });
