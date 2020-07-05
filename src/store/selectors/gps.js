@@ -1,6 +1,7 @@
 import { createSelector } from "reselect";
 
 const gpsData = (store) => store.gps;
+const settings = (store) => store.settings;
 
 export const getGPSData = (who) =>
   createSelector(gpsData, (data) => ({
@@ -12,3 +13,23 @@ export const getGPSData = (who) =>
 
 export const getShooterData = getGPSData("shooter");
 export const getTargetData = getGPSData("target");
+
+export const getDistance = createSelector(
+  [gpsData, settings],
+  (data, { gridSize }) => {
+    const shooter = {
+      x: data.shooter.x,
+      y: data.shooter.y,
+    };
+
+    const target = {
+      x: data.target.x,
+      y: data.target.y,
+    };
+
+    const distance =
+      Math.sqrt((shooter.x - target.x) ** 2 + (shooter.y - target.y) ** 2) *
+      gridSize;
+    return !isNaN(distance) ? Math.round(distance) : "";
+  },
+);
