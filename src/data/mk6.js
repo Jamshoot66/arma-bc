@@ -1,8 +1,8 @@
 export const mk6 = {
   type: "mortar",
   label: "mk6",
-  table: {
-    charge_0: [
+  table: [
+    [
       { distance: 100, elevation: 1497, dh: 9, time: 14.2 },
       { distance: 150, elevation: 1445, dh: 14, time: 14.1 },
       { distance: 200, elevation: 1390, dh: 19, time: 14.0 },
@@ -12,7 +12,7 @@ export const mk6 = {
       { distance: 400, elevation: 1127, dh: 61, time: 12.8 },
       { distance: 450, elevation: 1028, dh: 91, time: 12.1 },
     ],
-    charge_1: [
+    [
       { distance: 150, elevation: 1562, dh: 1, time: 28.5 },
       { distance: 200, elevation: 1549, dh: 1, time: 28.5 },
       { distance: 250, elevation: 1536, dh: 2, time: 28.5 },
@@ -51,8 +51,7 @@ export const mk6 = {
       { distance: 1900, elevation: 960, dh: 46, time: 23.1 },
       { distance: 1950, elevation: 912, dh: 63, time: 22.3 },
     ],
-
-    charge_2: [
+    [
       { distance: 300, elevation: 1563, dh: 0, time: 40 },
       { distance: 350, elevation: 1556, dh: 1, time: 40 },
       { distance: 400, elevation: 1550, dh: 1, time: 40 },
@@ -130,7 +129,7 @@ export const mk6 = {
       { distance: 4000, elevation: 900, dh: 40, time: 35 },
       { distance: 4050, elevation: 861, dh: 56, time: 35 },
     ],
-    charge_3: [
+    [
       { distance: 1150, elevation: 1507, dh: 0, time: 50 },
       { distance: 1200, elevation: 1504, dh: 0, time: 50 },
       { distance: 1250, elevation: 1499, dh: 0, time: 50 },
@@ -237,5 +236,5 @@ export const mk6 = {
       { distance: 6300, elevation: 884, dh: 0, time: 38 },
       { distance: 6350, elevation: 854, dh: 0, time: 37 },
     ],
-  },
+  ],
 };
