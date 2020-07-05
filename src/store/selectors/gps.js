@@ -1,5 +1,4 @@
 import { createSelector } from "reselect";
-import types from "types";
 
 const gpsData = (store) => store.gps;
 
@@ -11,5 +10,5 @@ export const getGPSData = (who) =>
     y: data[who].y,
   }));
 
-export const getShooterData = getGPSData(types.gps.SHOOTER_KEY);
-export const getTargetData = getGPSData(types.gps.TARGET_KEY);
+export const getShooterData = getGPSData("shooter");
+export const getTargetData = getGPSData("target");
