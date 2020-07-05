@@ -33,3 +33,10 @@ export const getDistance = createSelector(
     return !isNaN(distance) ? Math.round(distance) : "";
   },
 );
+
+export const getHeight = createSelector(gpsData, ({ shooter, target }) => {
+  const shooterHeight = shooter?.height;
+  const targetHeight = target?.height;
+  const height = targetHeight - shooterHeight;
+  return !isNaN(height) ? Math.round(height) : "";
+});
