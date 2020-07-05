@@ -26,7 +26,7 @@ export const calcGPS = (x, y) => {
   const parsedX = String(Math.floor(x));
   const parsedY = String(Math.floor(y));
 
-  const maxCoordLength = Math.max(parsedX.length, parsedY.length);
+  const maxCoordLength = Math.max(parsedX.length, parsedY.length, 3);
   const leadingNullsX = maxCoordLength - parsedX.length;
   const gpsX = new Array(leadingNullsX).fill("0").join("") + parsedX;
   const leadingNullsY = maxCoordLength - parsedY.length;
