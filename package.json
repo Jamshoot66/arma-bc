@@ -59,7 +59,8 @@
       "object-shorthand": "off",
       "class-methods-use-this": "off",
       "import/prefer-default-export": "off",
-      "react/jsx-fragments": "off"
+      "react/jsx-fragments": "off",
+      "import/extensions": "off"
     },
     "settings": {
       "import/resolver": {
