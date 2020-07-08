@@ -44,7 +44,6 @@ class Main extends Component {
     ));
 
   render() {
-    console.log("this.state ", this.state);
     const { activeTab } = this.state;
     return (
       <MDBRow className="mt-2 mt-4">

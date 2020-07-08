@@ -10,7 +10,6 @@ import Main from "components/Main";
 import ModalManager from "components/ModalManager";
 
 function App() {
-  console.log("github action test");
   return (
     <Provider store={setupStore()}>
       <ThemeProvider theme={theme}>
