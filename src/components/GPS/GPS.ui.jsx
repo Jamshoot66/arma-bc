@@ -1,6 +1,7 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import PropTypes from "prop-types";
 import { MDBInput, MDBRow, MDBCol } from "mdbreact";
+import InputPlus from "components/UI/InputPlus";
 
 export function GPSForm(props) {
   const {
@@ -13,11 +14,17 @@ export function GPSForm(props) {
     y,
     onCoordsChange,
   } = props;
+
+  const [value, setValue] = useState(0);
+
   return (
     <React.Fragment>
       <MDBRow>
         <MDBCol>
           <h4 className="mb-3">{caption}</h4>
+        </MDBCol>
+        <MDBCol size="4">
+          <InputPlus min={0} value={value} onChange={setValue} />
         </MDBCol>
       </MDBRow>
       <MDBRow>
