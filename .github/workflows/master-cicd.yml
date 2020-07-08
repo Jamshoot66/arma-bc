@@ -43,9 +43,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v2
         with:
           name: build
+          path: build
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
