@@ -66,6 +66,24 @@ describe("GPS utilities. Test 'parseGPS' function", () => {
     const result = null;
     expect(parseGPS(source)).toEqual(result);
   });
+
+  test("gps parser with shoot on center, case 1)", () => {
+    const source = "123456";
+    const result = {
+      x: 123.5,
+      y: 456.5,
+    };
+    expect(parseGPS(source, true)).toEqual(result);
+  });
+
+  test("gps parser with shoot on center, case 2)", () => {
+    const source = "12345678";
+    const result = {
+      x: 123.45,
+      y: 567.85,
+    };
+    expect(parseGPS(source, true)).toEqual(result);
+  });
 });
 
 describe("GPS utilities. Test 'calcGPS' function", () => {

@@ -1,17 +1,26 @@
 /**
  * @description parse gps and slice it into x- y- coordinates
  * @param {string} gps
+ * @param {boolean} isShootOnCenter
  * @return {object|null} coords
  */
-export const parseGPS = (gps) => {
+export const parseGPS = (gps, isShootOnCenter = false) => {
   if (typeof gps !== "string" || (gps?.length !== 6 && gps?.length !== 8))
     return null;
 
   const divider = gps.length / 2;
   const fractionalPow = divider - 3;
+  const centerCoords = isShootOnCenter ? 5 / 10 ** (fractionalPow + 1) : 0;
+  const x = gps.slice(0, divider) / 10 ** fractionalPow + centerCoords;
+  const y = gps.slice(divider) / 10 ** fractionalPow + centerCoords;
+
+  const roundedX =
+    Math.round(x * 10 ** (fractionalPow + 1)) / 10 ** (fractionalPow + 1);
+  const roundedY =
+    Math.round(y * 10 ** (fractionalPow + 1)) / 10 ** (fractionalPow + 1);
   return {
-    x: gps.slice(0, divider) / 10 ** fractionalPow,
-    y: gps.slice(divider) / 10 ** fractionalPow,
+    x: roundedX,
+    y: roundedY,
   };
 };
 
