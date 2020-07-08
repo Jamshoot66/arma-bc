@@ -1,11 +1,12 @@
 import actionType from "store/actionTypes";
 import { parseGPS, calcGPS } from "utils";
 
-export const setGPS = ({ shooter, target }) => (dispatch) => {
-  const parsedShooterCoords = parseGPS(shooter?.gps);
+export const setGPS = ({ shooter, target }) => (dispatch, getStore) => {
+  const { aimOnCenter } = getStore().settings;
+  const parsedShooterCoords = parseGPS(shooter?.gps, aimOnCenter);
   const parsedShooter = { ...shooter, ...parsedShooterCoords };
 
-  const parsedTargetCoords = parseGPS(target?.gps);
+  const parsedTargetCoords = parseGPS(target?.gps, aimOnCenter);
   const parsedTarget = { ...target, ...parsedTargetCoords };
 
   dispatch({
