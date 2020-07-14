@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import { MDBInput, MDBRow, MDBCol } from "mdbreact";
 import InputPlus from "components/UI/InputPlus";
 
+// eslint-disable-next-line react/prop-types
+const PositionNumber = ({ value, onChange }) => (
+  <InputPlus min={1} value={value} onChange={onChange} />
+);
+
 export function GPSForm(props) {
   const {
     gps,
@@ -15,7 +20,7 @@ export function GPSForm(props) {
     onCoordsChange,
   } = props;
 
-  const [value, setValue] = useState(0);
+  const [positionNumber, setPositionNumber] = useState(0);
 
   return (
     <React.Fragment>
@@ -24,7 +29,7 @@ export function GPSForm(props) {
           <h4 className="mb-3">{caption}</h4>
         </MDBCol>
         <MDBCol size="4">
-          <InputPlus min={0} value={value} onChange={setValue} />
+          <PositionNumber value={positionNumber} onChange={setPositionNumber} />
         </MDBCol>
       </MDBRow>
       <MDBRow>
