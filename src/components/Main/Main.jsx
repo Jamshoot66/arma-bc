@@ -8,7 +8,6 @@ class Main extends Component {
   tabs = [
     { caption: "GPS", content: <GPS /> },
     { caption: "Прямой", content: "Прямой" },
-    { caption: "Позиции", content: "Позиции" },
     { caption: "Таблица", content: "Таблица" },
   ];
 
