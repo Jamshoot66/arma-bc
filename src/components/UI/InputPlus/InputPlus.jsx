@@ -35,8 +35,8 @@ const InputPlus = (props) => {
   );
 
   useEffect(() => {
-    inputChange();
-  }, [inputChange]);
+    inputChange(value);
+  }, [inputChange, value]);
 
   return (
     <Wrapper className="def-number-input number-input">
