@@ -55,7 +55,7 @@ export const SubButton = styled(Button)`
 `;
 
 export const Input = styled.input`
-  width: 2.5rem;
+  width: 100%;
   text-align: center;
   border: 1px solid #dddddd;
   box-sizing: content-box;
