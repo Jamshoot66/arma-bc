@@ -59,7 +59,8 @@ export const Input = styled.input`
   text-align: center;
   border: 1px solid #dddddd;
   box-sizing: content-box;
-  appearance: none;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
   border-radius: 0;
   padding: 3px 0;
   margin: 0;
