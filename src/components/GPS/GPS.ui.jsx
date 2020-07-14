@@ -8,6 +8,58 @@ const PositionNumber = ({ value, onChange }) => (
   <InputPlus min={1} value={value} onChange={onChange} />
 );
 
+// eslint-disable-next-line react/prop-types
+const GPSInput = ({ value, onChange }) => (
+  <MDBInput
+    className="clear-input"
+    label="GPS"
+    type="number"
+    value={value}
+    containerClass="mb-0 mt-2"
+    onChange={(e) => onChange(e.target.value)}
+  />
+);
+
+// eslint-disable-next-line react/prop-types
+const CoordInput = ({ value, label, onChange }) => (
+  <MDBInput
+    label={`Координата ${label}`}
+    type="number"
+    value={value}
+    containerClass="mb-0 mt-2"
+    onChange={(e) => onChange(e.target.value)}
+  />
+);
+
+// eslint-disable-next-line react/prop-types
+const CoordInputX = ({ value, onChange }) => (
+  <CoordInput
+    label="X"
+    value={value}
+    onChange={(newValue) => onChange({ x: newValue })}
+  />
+);
+
+// eslint-disable-next-line react/prop-types
+const CoordYInput = ({ value, onChange }) => (
+  <CoordInput
+    label="Y"
+    value={value}
+    onChange={(newValue) => onChange({ y: newValue })}
+  />
+);
+
+// eslint-disable-next-line react/prop-types
+const HeightInput = ({ value, onChange }) => (
+  <MDBInput
+    label="Высота, м"
+    type="number"
+    value={value}
+    containerClass="mb-0 mt-2"
+    onChange={(e) => onChange(e.target.value)}
+  />
+);
+
 export function GPSForm(props) {
   const {
     gps,
@@ -34,40 +86,18 @@ export function GPSForm(props) {
       </MDBRow>
       <MDBRow>
         <MDBCol size="8">
-          <MDBInput
-            label="GPS"
-            value={gps}
-            containerClass="mb-0 mt-2"
-            onChange={(e) => onGPSChange(e.target.value)}
-          />
+          <GPSInput value={gps} onChange={onGPSChange} />
         </MDBCol>
         <MDBCol size="4">
-          <MDBInput
-            label="Высота, м"
-            value={height}
-            containerClass="mb-0 mt-2"
-            onChange={(e) => onHeightChange(e.target.value)}
-          />
+          <HeightInput value={height} onChange={onHeightChange} />
         </MDBCol>
       </MDBRow>
       <MDBRow className="mb-5">
         <MDBCol size="6">
-          <MDBInput
-            label="Координата X"
-            type="number"
-            value={x}
-            containerClass="mb-0 mt-2"
-            onChange={(e) => onCoordsChange({ x: e.target.value })}
-          />
+          <CoordInputX value={x} onChange={onCoordsChange} />
         </MDBCol>
         <MDBCol size="6">
-          <MDBInput
-            label="Координата Y"
-            type="number"
-            value={y}
-            containerClass="mb-0 mt-2"
-            onChange={(e) => onCoordsChange({ y: e.target.value })}
-          />
+          <CoordYInput value={y} onChange={onCoordsChange} />
         </MDBCol>
       </MDBRow>
     </React.Fragment>
