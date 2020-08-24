@@ -35,18 +35,18 @@ const InputPlus = (props) => {
   );
 
   useEffect(() => {
-    inputChange();
-  }, [inputChange]);
+    inputChange(value);
+  }, [inputChange, value]);
 
   return (
     <Wrapper className="def-number-input number-input">
       <SubButton onClick={decrease} className="minus" />
       <Input
-        className="quantity"
+        type="number"
+        className="quantity clear-input"
         name="quantity"
         value={value}
         onChange={(e) => inputChange(Number(e.target.value))}
-        type="number"
       />
       <AddButton onClick={increase} className="plus" />
     </Wrapper>

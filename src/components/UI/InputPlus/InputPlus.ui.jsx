@@ -7,12 +7,13 @@ export const Wrapper = styled.div`
 
 export const Button = styled.button`
   border: 1px solid #dddddd;
-  //background-color: #757575
+  background-color: #dddddd;
   width: 2rem;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  appearance: none;
 `;
 
 export const AddButton = styled(Button)`
@@ -54,8 +55,13 @@ export const SubButton = styled(Button)`
 `;
 
 export const Input = styled.input`
-  width: 3rem;
+  width: 100%;
   text-align: center;
   border: 1px solid #dddddd;
   box-sizing: content-box;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 3px 0;
+  margin: 0;
 `;
